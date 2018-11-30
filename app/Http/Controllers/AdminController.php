@@ -13,4 +13,12 @@ class AdminController extends Controller
     public function index() {
         return view('admin');
     }
+
+    /**
+     * 
+     * @return value;
+     */
+    public function edit($personid, $newname) {
+        return view('admin')->with(compact('personid', 'newname'));
+    }
 }

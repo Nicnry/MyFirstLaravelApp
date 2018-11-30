@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', 'AdminController@index');
+Route::get('/admin/{personid}/{newname}', 'AdminController@edit');
 
 Auth::routes();
 

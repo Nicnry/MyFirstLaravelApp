@@ -87,6 +87,10 @@
                 <div class="links">
                     <a href="{{ url('/') }}">Back</a>
                 </div>
+                <div class="lel">
+                    {{ $personid }}
+                    {{ $newname }}
+                </div>
             </div>
         </div>
     </body>
