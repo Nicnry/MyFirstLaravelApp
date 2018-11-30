@@ -81,11 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Admin
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('/admin') }}">Administration</a>
+                    <a href="{{ url('/') }}">Back</a>
                 </div>
             </div>
         </div>
