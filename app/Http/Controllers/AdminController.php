@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     /**
      * 
-     * @return 'ok';
+     * @return view admin;
      */
     public function index() {
         return view('admin');
