@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', 'AdminController@index');
-Route::get('/admin/{personid}/{newname}', 'AdminController@edit');
+/* Route::get('/admin/{personid}/{newname}', 'AdminController@edit'); */
+Route::get('admin/hide/{id}', 'AdminController@hide');
 
 Route::get('myform', function() {
     return view('myform');

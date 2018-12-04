@@ -23,4 +23,12 @@ class AdminController extends Controller
     public function edit($personid, $newname) {
         return view('admin')->with(compact('personid', 'newname'));
     }
+
+    public function hide($id) {
+        $things = DataProvider::getData();
+        $data = array_filter($things, function ($thing) use ($id) {
+            return $thing->getId() != $id;
+        });
+        return view('admin')->with(compact('data'));
+    }
 }

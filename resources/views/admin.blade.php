@@ -9,33 +9,34 @@
                 <div class="links">
                     <a href="{{ url('/') }}">Back</a>
                 </div>
-                @if(count($data))
-                    <table>
-                        <thead>
-                            <th>id</th>
-                            <th>Name</th>
-                            <th>NbBricks</th>
-                            <th>Color</th>
-                        </thead>
-                        <tbody>
-                            @foreach ($data as $item)
-                            <tr>
-                                <td>{{$item->getId()}}</td>
-                                <td>{{$item->getName()}}</td>
-                                <td>{{$item->getNbBricks()}}</td>
-                                <td>{{$item->getColor()}}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
+                @isset($data)
+                    @if(count($data))
+                        <table>
+                            <thead>
                                 <th>id</th>
                                 <th>Name</th>
                                 <th>NbBricks</th>
                                 <th>Color</th>
-                        </tfoot>
-                    </table>
-                @else
-                    <div>On a {{ count($data) }} choses</div>
-                @endif
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $item)
+                                <tr>
+                                    <td><a href="/admin/hide/{{$item->getId()}}">{{$item->getName()}}</a></td>
+                                    <td>{{$item->getNbBricks()}}</td>
+                                    <td>{{$item->getColor()}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            <tfoot>
+                                    <th>id</th>
+                                    <th>Name</th>
+                                    <th>NbBricks</th>
+                                    <th>Color</th>
+                            </tfoot>
+                        </table>
+                    @else
+                        <div>On a {{ count($data) }} choses</div>
+                    @endif
+                @endisset
             </div>
 @endsection
