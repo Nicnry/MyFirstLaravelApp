@@ -18,6 +18,10 @@ Route::get('/', function () {
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/{personid}/{newname}', 'AdminController@edit');
 
+Route::get('myform', function() {
+    return view('myform');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

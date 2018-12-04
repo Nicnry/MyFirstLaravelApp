@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Classes\DataProvider;
 
 class AdminController extends Controller
 {
@@ -11,7 +12,8 @@ class AdminController extends Controller
      * @return view admin;
      */
     public function index() {
-        return view('admin');
+        $data = DataProvider::getData();
+        return view('admin')->with(compact('data'));
     }
 
     /**
