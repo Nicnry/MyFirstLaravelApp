@@ -9,8 +9,9 @@
                 <div class="links">
                     <a href="{{ url('/') }}">Back</a>
                 </div>
-                @isset($data)
-                    @if(count($data))
+                @if(count($data))
+                    <form method="post" action="/">
+                        @csrf
                         <table>
                             <thead>
                                 <th>id</th>
@@ -24,6 +25,7 @@
                                     <td><a href="/admin/hide/{{$item->getId()}}">{{$item->getName()}}</a></td>
                                     <td>{{$item->getNbBricks()}}</td>
                                     <td>{{$item->getColor()}}</td>
+                                    <td><button>Supprimer</button></td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -34,9 +36,9 @@
                                     <th>Color</th>
                             </tfoot>
                         </table>
-                    @else
-                        <div>On a {{ count($data) }} choses</div>
-                    @endif
-                @endisset
+                    </form>
+                @else
+                    <div>On a {{ count($data) }} choses</div>
+                @endif
             </div>
 @endsection
